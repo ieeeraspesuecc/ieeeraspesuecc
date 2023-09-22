@@ -6,7 +6,7 @@
     font-family: 'Poppins', sans-serif;
     box-sizing : border-box; 
     outline : none; 
-    color : #fff; 
+    color : #fafafa; 
     scroll-behavior: smooth;
 }
 :root{
@@ -21,17 +21,20 @@ body{
     width: 100%; 
     display: flex; 
     position : fixed; 
-    padding : 30px 120px; 
+    padding : 15px 120px; /* Adjust the padding for height reduction */
     background-color : transparent; 
     justify-content: space-between;
     z-index : 1111;  
     transition: 0.5s ease;
+    opacity: 80%;
 }
 
 .navbar.sticky{
     padding: 6px 60px; 
     background: #0c1518; 
     box-shadow: 0 0 15px rgba(0,0,0,0.5); 
+    height: 15%;
+    
 }
 
 .navbar.sticky logo{
@@ -40,7 +43,7 @@ body{
 }
 
 .navbar.sticky .logo B{
-    color : #fff; 
+    color : #fafafa; 
 }
 
 .logo{
@@ -69,11 +72,14 @@ ol li a{
     font-size : 20px; 
     font-weight : 500; 
     text-decoration: none!important;
-    text-transform: capitalize; 
+    text-transform: capitalize;
+    color: initial-color; /* Set your initial color here */
+    transition: color 0.3s; /* Add a transition for the 'color' property with a 0.3-second duration */
 }
 
 ol li:hover a{
-    color : var(--prime);  
+    color : var(--prime);
+
 }
 
 
@@ -100,9 +106,12 @@ ol li:hover a{
     height : 100%;
     width: 100%; 
     position : absolute ; 
-    background : url("banner.jpg"); 
+    background : url("assets/banner.jpg"); 
     background-size: cover; 
-    background-position : center; 
+    background-position : center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     filter : brightness(40%);
 }
 
@@ -135,7 +144,7 @@ ol li:hover a{
 
 .highlights .tagline{
     color : #d7d7d7; 
-    font-size : 1.2vw; 
+    font-size : 1.3vw; 
     text-align: center; 
     font-weight : normal; 
 }
@@ -144,19 +153,22 @@ ol li:hover a{
     position : absolute; 
     left: 50%; 
     transform : translateX(-50%); 
+    letter-spacing: 2px;
     font-weight: 800; 
     padding: 5px 20px; 
-    margin-top: 1.2em; 
+    margin-top: 2.5em; 
     color : var(--prime); 
     border: 2px solid var(--prime);
     border-radius: 50px;
     background: transparent;
     text-transform: uppercase;
+    width: 200px; /* Increase button width by 30% */
+    height: 69px; /* Set the button height to match width */
     transition: 0.3s ease; 
 }
 
 .highlights .join:hover{
-    color: #fff; 
+    color: #fafafa; 
     cursor: pointer; 
     letter-spacing: 1.5px; 
     background: var(--prime); 
@@ -229,7 +241,7 @@ span{
 .about .content .cols a{
     position: relative; 
     top: 20px;
-    color : #fff; 
+    color : #fafafa; 
     background: var(--prime); 
     padding: 5px 20px; 
     border-radius: 5px; 
@@ -243,7 +255,7 @@ span{
 
 .about .content .cols a:hover{
     color : #000; 
-    background : #fff; 
+    background : #fafafa; 
 
 }
 
@@ -275,14 +287,17 @@ span{
     padding: 20px; 
     margin: 10px; 
     background: #222; 
-    box-shadow : 0 10px 15px rgba(0,0,0,0.5); 
+    box-shadow : 0 10px 15px rgba(0,0,0,0.5);
+    border-radius: 15px; /* Add border-radius for rounded edges */
+    overflow: hidden;
 }
 
 .coreteam .content .frame .box{
     position: relative; 
     height: 200px ;
     width: 100%; 
-    overflow: hidden;    
+    overflow: hidden;
+    border-radius: 15px; 
 }
 
 .coreteam .content .frame .box img{
@@ -301,7 +316,19 @@ span{
 
 .coreteam .content .frame .title{
     color : var(--prime); 
-    padding: 5px 0;  
+    padding: 5px 0; 
+    color:;
+}
+.coreteam .content .frame .title,
+.coreteam .content .frame .title a {
+    color: #7af69d; /* Initial text color */
+    transition: color 0.6s ease; /* Smooth transition effect */
+    font-size: 1.2em;
+}
+
+.coreteam .content .frame .title:hover,
+.coreteam .content .frame .title:hover a {
+    color: #fafafa; /* Change text color to white on hover */
 }
 
 .coreteam .content .frame p{
@@ -312,7 +339,7 @@ span{
 .coreteam .content .frame .headline i{
     height: 22px; 
     width: 22px; 
-    border: 1.5px solid #fff;
+    border: 1.5px solid #fafafa;
     border-radius: 50%; 
     text-align: center; 
     font-size: 12px; 
@@ -339,32 +366,37 @@ span{
     box-shadow: 0 10px 15px rgba(0,0,0,0.5); 
     margin: 10px; 
     background: #222; 
+    border-radius: 15px; /* Add border-radius for rounded edges */
+    overflow: hidden;
 }
 
 .officebearers .content .frame .box{
     position: relative; 
     height: 300px; 
     width: 100%; 
-    overflow: hidden; 
+    overflow: hidden;
+    border-radius: 15px; /* Add border-radius for rounded edges */
 }
 
 .officebearers .content .frame .box img{
-    position: absolute; 
-    height: 100%; 
-    width: 100%; 
-    object-fit: cover; 
-    transition: 0.2s ease-in; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.2s ease-in;
 }
 
 .officebearers .content .frame .box:hover img{
-    transform: scale(1.08); 
+    filter: brightness(100%);
+    transform: scale(1.08);
 }
 
 .officebearers .content .frame .headline{ 
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    margin: 8px 0; 
+    align-items: center;
+    margin: 8px 0;
+    
 }
 
 .officebearers .content .frame .headline .circle-icon {
@@ -373,23 +405,25 @@ span{
     justify-content: center; /* Center horizontally */
     width: 24px;
     height: 24px;
-    border: 1.5px solid #fff;
+    border: 1.5px solid #fafafa;
     border-radius: 50%;
     margin-right: 5px;
     cursor: pointer;
-    transition: border-color 0.3s, background-color 0.3s;
+    
 }
 
 /* Hover effect */
 .officebearers .content .frame .headline .circle-icon:hover {
     border: 1.5px solid var(--prime);
     background: var(--prime);
-    color: #fff;
+    color: #fafafa;
+    transition: color 3s ease; 
 }
 
 /* LinkedIn icon specific styling */
 .officebearers .content .frame .headline .linkedin-icon {
     color: #0077B5; /* LinkedIn blue color */
+    
 }
 
 /* Instagram icon specific styling */
@@ -398,9 +432,16 @@ span{
 }
 
 
-.officebearers .content .frame .headline .title{
-    color: var(--prime); 
-    font-size: 1.2em; 
+.officebearers .content .frame .title,
+.officebearers .content .frame .title a {
+   color: #7af69d; /* Initial text color */
+    transition: color 0.6s ease; /* Smooth transition effect */
+    font-size: 1.2em;
+}
+
+.officebearers .content .frame .title:hover,
+.officebearers .content .frame .title:hover a {
+    color: #fafafa; /* Change text color to white on hover */
 }
 
 .officebearers .content .frame p{
@@ -410,20 +451,20 @@ span{
 }
 
 .officebearers .content .frame a{
-    top: 20px; 
-    color: var(--prime); 
-    background: transparent; 
-    padding: 5px 10px; 
-    border: 1.5px solid var(--prime); 
-    border-radius: 5px; 
+    top: 20px;
+    color: var(--prime);
+    background: transparent;
+    padding: 5px 10px;
+    border: 1.5px solid var(--prime);
+    border-radius: 5px;
     text-decoration: none;
-    position: relative; 
+    position: relative;
     text-transform: capitalize;
-    transition: 0.2s ease; 
+    transition: 0.2s ease;
 }
 
 .officebearers .content .frame a:hover{
-    color: #fff; 
+    color: #fafafa; 
     background: var(--prime);
 }
 
@@ -454,12 +495,12 @@ span{
 
 .Events .content .row .cols .heading{
     font-size: 2em; 
-    color: #ff8502; 
+    color: #ffc34e; 
     text-transform: capitalize;
 }
 
 .Events .content .row:nth-child(odd) .cols .heading{
-    color: #02a3ff; 
+    color: #42d9ff; 
 }
 
 .Events .content .row .cols .boxes{
@@ -468,7 +509,7 @@ span{
     height: 350px; 
     padding: 20px;
     border-radius: 8px;
-    background: #fff; 
+    background: #fafafa; 
     box-shadow: 0 10px 10px rgba(0,0,0,0.5); 
 }
 
@@ -489,9 +530,10 @@ span{
     width: 400px; 
     height: 500px; 
     padding: 20px; 
-    background: #fff; 
+    background: #fafafa; 
     box-shadow: 0 10px 15px rgba(0,0,0,0.5); 
     z-index: 1;
+    border-radius: 15px;
 }
 
 .contact .content form input{
@@ -531,21 +573,25 @@ span{
     border-color: var(--prime);
     cursor: pointer; 
     transition: 0.2s ease; 
+    border-radius: 15px;
+    margin-top:10px;
 }
 
 .contact .content form .btn:hover{
     background: var(--prime);
-    color: #fff; 
+    color: #fafafa; 
 }
 
 .contact .content .bgimg{
     position: absolute; 
     height: 100%;
     width: 100%; 
-    background: url(bgimg.jpg);
+    background: url("assets/bgimg.jpg");
     background-size: cover; 
     background-position: center;
-    filter: brightness(20%); 
+    filter: brightness(20%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Styling Copyright section : */
@@ -555,15 +601,15 @@ span{
     height: 40px;
     width: 100%;
     line-height: 40px;
-    background: #222;
+    background: transparent;
     text-align: center;
-    font-size: 18px;  
+    font-size: 18px;
 }
 
 .copyright a{
     color: var(--prime);
     text-decoration: none; 
-    margin: 0 2px; 
+    margin: 0.2px; 
     font-weight: lighter;
 }
 
@@ -603,24 +649,26 @@ span{
         width: 25px; 
         margin: auto 0; 
         cursor: pointer; 
-        background: url(menubar.jpg); 
+        background: url("assets/menubar.jpg"); 
         background-size: 25px; 
         background-position: center;
         filter: invert(1);
         background-repeat: no-repeat;
     }
     .navbar .toggle.active{
-        background: url(close.png); 
+        background: url(assets/close.png); 
         background-size: 40px; 
         background-position: center; 
         cursor: pointer; 
-        filter: invert(1); 
+        filter: invert(1);
+        transition: max-height 0.3s ease-in-out; 
     }
 
     .highlights h3{
         font-size: 3vw; 
         padding: 5px 10px; 
         border-left: 3px solid var(--prime);
+        
     }
     .highlights h1{
         font-size: 16vw; 
@@ -644,17 +692,27 @@ span{
     
     .coreteam .content .frame{
         width: 260px; 
-        padding: 18px; 
+        padding: 18px;
+        border-radius: 15px; /* Add border-radius for rounded edges */
+        overflow: hidden;
     }
 
     .officebearers .content .frame{
-        width: 350px;
-        padding: 15px 15px 40px 15px; 
-        margin: 10px 5px; 
+        position: relative;
+    width: 350px;
+    padding: 20px;
+    margin: 10px;
+    background: #222;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 20px; /* Add border-radius for curved effect */
+    overflow: hidden; /* Hide content beyond the curved corners */
     }
 
     .officebearers .content .frame .box{
-        height: 200px; 
+        position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
     }
 
     .officebearers .content .frame a{
